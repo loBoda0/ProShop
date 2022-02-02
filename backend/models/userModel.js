@@ -4,8 +4,7 @@ import bcrypt from "bcryptjs"
 const userSchema = mongoose.Schema({
     name: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     email: {
         type: String,
@@ -17,7 +16,7 @@ const userSchema = mongoose.Schema({
         required: true
     },
     isAdmin: {
-        type: String,
+        type: Boolean,
         required: true,
         default: false
     },
