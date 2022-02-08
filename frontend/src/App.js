@@ -27,6 +27,9 @@ const App = () => {
                 <Container>
                     <Routes>
                         <Route path='/' element={<HomeScreen />} exact />
+                        <Route path='/page/:pageNumber' element={<HomeScreen />} exact />
+                        <Route path='/search/:keyword/page/:pageNumber' element={<HomeScreen />} exact />
+                        <Route path='/search/:keyword' element={<HomeScreen />}  />
                         <Route path='product/:id' element={<ProductScreen />} />
                         <Route path='cart' element={<CartScreen />} exact >
                             <Route path=':id' element={<CartScreen />} exact />
@@ -41,6 +44,7 @@ const App = () => {
                         <Route path='/admin/userlist' element={<UserListScreen />} exact />
                         <Route path='/admin/user/:id/edit' element={<UserEditScreen />} exact />
                         <Route path='/admin/productlist/' element={<ProductListScreen />} exact />
+                        <Route path='/admin/productlist/:pageNumber' element={<ProductListScreen />} exact />
                         <Route path='/admin/orderlist/' element={<OrderListScreen />} exact />
                         <Route path='/admin/product/:id/edit/' element={<ProductEditScreen />} exact />
                     </Routes>
