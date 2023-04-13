@@ -23,7 +23,6 @@ import {
 
 export const createOrder = (order) => async (dispatch, getState) => {
     try {
-        console.log('it works')
         dispatch({
             type: ORDER_CREATE_REQUEST
         })

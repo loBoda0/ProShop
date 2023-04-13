@@ -10,7 +10,7 @@ const authUser = asyncHandler(async (req, res) => {
 
     const user = await User.findOne({ email })
 
-    if(user && (await user.matchPassword(password))) {
+    if (user && (await user.matchPassword(password))) {
         res.json({
             _id: user._id,
             name: user.name,
@@ -32,18 +32,18 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const userExists = await User.findOne({ email })
 
-    if(userExists) {
+    if (userExists) {
         res.status(400)
         throw new Error('User already exists')
     }
 
     const user = await User.create({
-        name, 
+        name,
         email,
         password
     })
 
-    if(user) {
+    if (user) {
         res.status(201).json({
             _id: user._id,
             name: user.name,
@@ -85,7 +85,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     if (user) {
         user.name = req.body.name || user.name
         user.email = req.body.email || user.email
-        if(req.body.password) {
+        if (req.body.password) {
             user.password = req.body.password
         }
 
@@ -166,7 +166,7 @@ const updateUser = asyncHandler(async (req, res) => {
     }
 })
 
-export { 
+export {
     authUser,
     registerUser,
     getUserProfile,

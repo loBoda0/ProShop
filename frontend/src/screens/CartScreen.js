@@ -91,7 +91,7 @@ const CartScreen = () => {
                 </ListGroup.Item>
             </Card>
         </Col>
-  </Row>;
-};
+  </Row>
+}
 
 export default CartScreen;
